@@ -6,7 +6,6 @@ def get_gemini_model():
     try:
         genai.configure(api_key=GEMINI_API_KEY)
         # Initialize the Gemini model
-        # You can choose different models like 'gemini-pro', 'gemini-pro-vision', etc.
         model = genai.GenerativeModel(model_name='gemini-2.0-flash',
                                   generation_config={
                                       "response_mime_type": "application/json", # Tell the model to output JSON
