@@ -3,3 +3,7 @@
 * Application is developed using RAG model to provide context and handles user query based on that context rather than based on generic pretrained data
 * Before running application in local ensure embeddings are created in vector store, for first time execution or to update embeddings run data_ingestion.py separately and then start main application
 
+## Tech Used
+* Gemini - For GenAI
+* Langchain - For RAG based implementation and to build chain of steps for app
+* ChromaDB - Vector DB
