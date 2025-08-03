@@ -7,7 +7,7 @@ from services.data_processor import process_message_logic
 chat_bp = Blueprint('chat', __name__, url_prefix='/chat')
 
 @chat_bp.route('/process', methods=['POST'])
-def process_data():
+async def process_data():
     """
     Handles POST requests to the /chat/process endpoint.
     It expects a JSON payload with a 'message' field.
@@ -27,7 +27,7 @@ def process_data():
         user_message = data['message']
 
         # --- Call Business Logic ---
-        processed_message = process_message_logic(user_message)
+        processed_message = await process_message_logic(user_message)
 
         # Prepare the response data as a dictionary
         response_data = {
