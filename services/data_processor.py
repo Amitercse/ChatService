@@ -3,9 +3,9 @@ from typing import Any, Coroutine
 from flask import jsonify
 from services.rag_handler import user_input
 
-def process_message_logic(message: str) -> Coroutine[Any, Any, Any]:
+async def process_message_logic(message: str) -> Coroutine[Any, Any, Any]:
     try:
-        generated_text = user_input(message)
+        generated_text = await user_input(message)
         return generated_text
 
     except Exception as e:

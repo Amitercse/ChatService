@@ -29,6 +29,10 @@ async def process_data():
         # --- Call Business Logic ---
         processed_message = await process_message_logic(user_message)
 
+        # Check if the result is a tuple (an error response from the logic function)
+        if isinstance(processed_message, tuple):
+            return processed_message
+
         # Prepare the response data as a dictionary
         response_data = {
             "original_message": user_message,
